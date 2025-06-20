@@ -245,7 +245,7 @@ void ble_packet_sink_impl::process_check_crc(uint8_t bit, uint64_t sample_index)
                              pmt::mp("CRC check"),
                              pmt::from_bool(crc_ok)); // CRC check prints #t if ok
         meta = pmt::dict_add(meta,
-                             pmt::mp("Payload start sample"),
+                             pmt::mp("Payload start"), // First sample of the payload
                              pmt::from_uint64(d_sample_payload_index));
         pmt::pmt_t payload =
             pmt::make_blob(d_payload.data(),
